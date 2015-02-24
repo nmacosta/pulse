@@ -28,11 +28,16 @@
 			<li><a href="#">Masa Critica</a></li>
 			<li><a href="#">Acuccs</a></li>
 			<li><a href="#">Ciclo Via</a></li>
-			<li id="publicar_nav"><a href="#" class="icon-pluma">Publicar</a></li>
+			<li id="publicar_nav"><a href="#" class="icon-pluma" id="mostrar-form">Publicar</a></li>
 		</ul>
 	</nav>
+	<form action="" id="formulario" class="formulario">
+		<input type="text" id="titulo" placeholder="Titulo" required>
+		<input type="url" id="enlace" placeholder="Link" required>
+		<input type="submit" value="Agregar">
+	</form>
 	<aside>
-		<video width="320" height="240" autoplay controls>
+		<video width="320" height="240" controls>
 			<source src="small.ogv" type="video/ogg"/>
 			<source src="small.mp4" type="video/mp4"/>
 		</video>
@@ -193,5 +198,7 @@
 			 2014
 		</p>
 	</footer>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="formulario.js"></script>
 </body>
 </html>
