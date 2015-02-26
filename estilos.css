@@ -12,6 +12,8 @@
 }  */
 
 /*Estilos de icon fonts*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
 @font-face {
 	font-family: 'pulse';
 	src:url('fuentes/pulse.eot?-7rf2q6');
@@ -178,6 +180,13 @@ nav ul #publicar_nav a
 	padding: 0.8em 0.5em 0.8em 2.5em;
 	text-decoration: none;
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+}
+nav ul #publicar_nav a.disabled
+{
+	background: grey;
+	box-shadow: none;
+	color: red;
+	cursor: default;
 }
 nav ul #publicar_nav a:before
 {
