@@ -18,6 +18,7 @@ var id = setInterval(function () {
 
 function mostrarFormulario (e) {
 	e.preventDefault();
+	e.stopPropagation();
 	$form.slideToggle();
 	$list.slideToggle();
 }
@@ -48,5 +49,23 @@ function agregarPost (e) {
 }
 
 //Eventos
+//Codigo para identificar que no se activan los eventos gracias al stopPropagation
+$('nav').on('click',(function(){ console.log('soy un nav y me dieron click');}));
+$('nav ul').on('click',(function(){ console.log('soy un nav ul y me dieron click');}));
+
+
 $button.click( mostrarFormulario );
 $form.on('submit',agregarPost)
+	 .find('#enlace')
+	 //en el focus se coloca http:// solo si el campo esta vacio
+	 .on('focus',(function(){
+	 	if ( $(this).val().length == 0 ){
+	 		$(this).val('http://');
+	 	}
+	 }))
+	 //en el focus se limpia el campo solo si unicamente tiene http://
+	 .on('blur',(function(){
+	 	if ( $(this).val() == 'http://'){
+	 		$(this).val('');
+	 	}
+	 }));
